@@ -4,9 +4,10 @@ const { createAppointment } = require('./lib/appointments');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const PUBLIC_DIR = path.join(__dirname, 'public');
 
 app.use(express.json());
-app.use(express.static(__dirname));
+app.use(express.static(PUBLIC_DIR));
 
 app.post('/api/appointments', async (req, res) => {
   try {
@@ -23,10 +24,6 @@ app.post('/api/appointments', async (req, res) => {
   }
 });
 
-if (require.main === module) {
-  app.listen(PORT, () => {
-    console.log(`Server läuft auf http://localhost:${PORT}`);
-  });
-}
-
-module.exports = app;
+app.listen(PORT, () => {
+  console.log(`Server läuft auf http://localhost:${PORT}`);
+});

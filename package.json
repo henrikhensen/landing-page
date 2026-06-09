@@ -2,9 +2,8 @@
   "name": "termin-landing-page",
   "version": "1.0.0",
   "description": "Landing Page zur Terminvereinbarung",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node dev-server.js"
   },
   "dependencies": {
     "express": "^4.21.0"
